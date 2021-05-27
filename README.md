@@ -1,7 +1,8 @@
-
-# Build
-
 <img src="https://merico-build.s3-us-west-2.amazonaws.com/Merico-Build-logo.svg" height="30"/>
+
+![build passing](https://badgen.net/badge/build/passing/4c1?icon=gitlab)
+![license](https://badgen.net/github/license/merico-dev/build)
+![Stars](https://badgen.net/github/stars/merico-dev/build)
 
 [Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses static code analysis to more accurately measure the value and impact of code contributions, it then renders these metrics into practical dashboards and reports.  
 
@@ -15,10 +16,6 @@ What makes Merico Build special?
 4) Technology previously available only to [enterprise](<https://meri.co/>) is now accessible and available to all. 
 
 Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better. 
-
-![build passing](https://badgen.net/badge/build/passing/4c1?icon=gitlab)
-![license](https://badgen.net/github/license/merico-dev/build)
-![Stars](https://badgen.net/github/stars/merico-dev/build)
 
 ## Summary
 
@@ -140,6 +137,10 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 `build-backend` requires a good deal of configuration. Most of it is required to make it work. For this section you'll be editing `config/local.js`.
 <br/>
 
+Please note, the Analytics Engine, RabbitMQ, and Minio are all **shared resources** for our open source developers. We are working towards making the Analytics Engine open source, but in the meantime we are offering this shared service.
+
+<br/>
+
 ### GitHub Auth
 
 Merico Build uses GitHub for Oauth and for access to the the user's public repo data.
@@ -168,9 +169,7 @@ Authorization callback URL | `http://localhost:1337/auth/github/callback`
 
 ### Analytics Engine
 
-Merico Build uses GRPC to execute functions on the Analytics Engine.
-
-For now we are giving all open source devs a sandbox environment to use, so these credentials are shared.
+Merico Build uses GRPC to execute functions on the Analytics Engine (AE). Merico will soon be making AE open source. Keep your eye out for it!
 
 Update `CA_GRPC_SERVER` config value in `config/local.js` to the following:
 
@@ -180,8 +179,6 @@ Update `CA_GRPC_SERVER` config value in `config/local.js` to the following:
 
 ### Minio
 Merico Build uses Minio to store the protobuf files created by the Analytics Engine. The `common-backend` submodule reads these protobuf files and enters the data in the Build DB.
-
-For now we are giving all open source devs a sandbox environment to use, so these credentials are shared.
 
 Update the `minio` config object in `config/local.js` to the following:
 ```
@@ -199,8 +196,6 @@ minio: {
 ### RabbitMQ
 
 Build uses RabbitMQ to receive messages from the Analytics Engine about report progress and completion.
-
-For now we are giving all open source devs a sandbox environment to use, so these credentials are shared.
 
 Update the `RABBIT_MQ_URL` config value in `config/local.js` to the following:
 
