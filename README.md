@@ -50,7 +50,7 @@ To get the entire Merico Build application running on your computer, you'll need
 
 ### Clone
 
-Clone the repo
+Clone [the repo](<https://github.com/merico-dev/build-frontend>)
 ```
 git clone https://github.com/merico-dev/build-frontend.git
 ```
@@ -66,7 +66,7 @@ npm i
 
 ### Clone
 
-Clone the repo
+Clone [the repo](<https://github.com/merico-dev/build-backend>)
 ```
 git clone https://github.com/merico-dev/build-backend.git
 ```
