@@ -4,22 +4,22 @@
 ![license](https://badgen.net/github/license/merico-dev/build)
 [![Discord](https://img.shields.io/discord/844603288082186240.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/83rDG6ydVZ)
 
-[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses novel static analysis techniques to more accurately measure the value and impact of code contribution. 
+[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses novel static analysis to more accurately measure the value and impact of code contribution. 
 
 - For maintainers, Merico Build renders these metrics to track community growth and to identify rising star contributors. 
 - For developers, Merico Build automatically showcases your contributions in an evolving and sharable profile. 
 
-Why Merico Build?
+**Why Merico Build?**
 
-1) Code contribution is analyzed with a more sensitive and nuanced technique called Effective Lines of Code (ELOC). 
+1) Code contribution is analyzed with more perceptive static code analysis, including ELOC, an enhanced noise-proof metric drastically improving upon Lines of Code (LOC.) 
 2) Multidimensional signals extracted directly from the code, accounting for volume, dependencies, redundancy, test coverage, comment coverage, and more. 
 3) Contributions get translated into badges. Share badges and celebrate accomplishments with proof.
 
-To use the app, go to https://merico.build/. To contribute, scroll down for instructions to set up for development. 
+We invite you to join us to improve the transparency, health, and sustainability of open source. Merico began as [research](<https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-174.pdf>) in UC Berkeley's computer science department, we are excited to welcome contributors from around the world to join us in advancing this technology to empower developers everywhere to build better!
 
-If you have a feature request, feel free to create an issue in this repo or [join us on Discord](<https://discord.gg/83rDG6ydVZ>)!
+**To use the app, go to https://merico.build/. To contribute, scroll down for instructions to set up for development.**
 
-We are on a mission to improve the transparency, health, and sustainability of open source, and we invite you to join us. Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better! 
+**If you have a feature request, feel free to create an issue in this repo or join us on [Discord](<https://discord.gg/83rDG6ydVZ>)!**
 
 ## Summary
 
