@@ -18,8 +18,6 @@ What makes Merico Build special?
 
 Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better. 
 
-[Join our Discord](<https://discord.gg/83rDG6ydVZ>)
-
 ## Summary
 
 * [**Requirements**](#requirements)
