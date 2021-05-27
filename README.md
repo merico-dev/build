@@ -2,7 +2,7 @@
 
 ![build passing](https://badgen.net/badge/build/passing/4c1?icon=gitlab)
 ![license](https://badgen.net/github/license/merico-dev/build)
-![Stars](https://badgen.net/github/stars/merico-dev/build)
+![Discord](https://img.shields.io/discord/844603288082186240)
 
 [Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses static code analysis to more accurately measure the value and impact of code contributions, it then renders these metrics into practical dashboards and reports.  
 
@@ -167,6 +167,8 @@ Authorization callback URL | `http://localhost:1337/auth/github/callback`
 5. Set the `Redirect URI` to `http://localhost:1337/auth/gitlab/callback`
 6. Save the `Application Id` and `Secret` and paste them into the `gitlabAuth` config object in `config/local.js`
 
+<br/>
+
 ### Analytics Engine
 
 Merico Build uses GRPC to execute functions on the Analytics Engine (AE). Merico will soon be making AE open source. Keep your eye out for it!
@@ -213,7 +215,7 @@ You'll need an AWS account for this. If you don't already have one, [sign up for
 
 2. [Create a folder](<https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html#create-folder>) called `badges` within the new bucket.
 3. Use an existing IAM user, or create a new one, and give them at least the S3 permission to `putObject` (for testing purposes you can just give them full S3 access if you like). Copy their `Access Key` and `Secret Access Key`.
-4. Update the `AWS_S3` settings in `config/local.js` with the newly created `bucket` name, `Access Key`, `Secret Access Key`, and `Region`.
+4. Update the `AWS_S3` settings in `config/local.js` with the newly created `bucket name`, `Access Key`, `Secret Access Key`, and `Region`.
 <br/>
 
 ### AWS SES
@@ -251,17 +253,13 @@ After you've started the frontend app and the code has compiled, you should be a
 
 Sign up with your GitHub account, authorize the app, and submit a repository for analysis.
 
+Note: it's best to stick with smaller repositories for now. We do limit analysis to the latest 2,500 commits, but even still, a really large repo (e.g. Django) can take up to a day to process. Try to limit your analyses to repos with under 5,000 commits.
+
 <br/>
 
 ## Contributing
 
 We welcome and appreciate contributions. Feel free to find your own way and put up a pull request, or join us on [our discord](<https://discord.gg/83rDG6ydVZ>) and we can help. 
-
-<br/>
-
-## Finding Help
-
-If you need help getting set up, please join [our discord](<https://discord.gg/83rDG6ydVZ>). We are more than happy to help.
 
 <br/>
 
