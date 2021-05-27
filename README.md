@@ -130,8 +130,8 @@ psql postgres -c "GRANT ALL ON SCHEMA your_db_name to merico"
 
 4. Create the tables
 ```
-psql postgres -f db/schema-only.sql -d your_db_name -U merico
-psql postgres -f db/badge-types.sql -d your_db_name -U merico
+psql -f db/schema-only.sql -d your_db_name -U merico
+psql -f db/badge-types.sql -d your_db_name -U merico
 psql -f db/refresh-views.sql -d your_db_name -U merico
 ```
 <br/>
