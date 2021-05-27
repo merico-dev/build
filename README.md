@@ -4,19 +4,22 @@
 ![license](https://badgen.net/github/license/merico-dev/build)
 [![Discord](https://img.shields.io/discord/844603288082186240.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/83rDG6ydVZ)
 
+[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses novel static analysis techniques to more accurately measure the value and impact of code contribution. 
 
-[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses static code analysis to more accurately measure the value and impact of code contributions, it then renders these metrics into practical dashboards and reports.  
+- For maintainers, Merico Build renders these metrics to track community growth and to identify rising star contributors. 
+- For developers, Merico Build automatically showcases your contributions in an evolving and sharable profile. 
 
-We are on a mission to improve the transparency, health, and sustainability of open source, and we invite you to join us. We built and released Merico Build because we felt there was a better way to quantify and articulate the value of developer contributions. 
-We believe that increased objectivity and insight can equip developers and projects to achieve their potential. 
-What makes Merico Build special? 
+Why Merico Build?
 
-1) Code contribution is analyzed leveraging the abstract synthax tree, for more precise measurements. 
-2) Signals extracted directly from the code, enabling more pure insights. 
+1) Code contribution is analyzed with a more sensitive and nuanced technique called Effective Lines of Code (ELOC). 
+2) Multidimensional signals extracted directly from the code, accounting for volume, dependencies, redundancy, test coverage, comment coverage, and more. 
 3) Contributions get translated into badges. Share badges and celebrate accomplishments with proof.
-4) Technology previously available only to [enterprise](<https://meri.co/>) is now accessible and available to all. 
 
-Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better. 
+To use the app, go to https://merico.build/. To contribute, scroll down for instructions to set up for development. 
+
+If you have a feature request, feel free to create an issue in this repo or [join us on Discord](<https://discord.gg/83rDG6ydVZ>)!
+
+We are on a mission to improve the transparency, health, and sustainability of open source, and we invite you to join us. Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better! 
 
 ## Summary
 
@@ -212,7 +215,7 @@ You'll need an AWS account for this. If you don't already have one, [sign up for
 
 1. [Create a bucket](<https://www.google.com/search?q=aws+s3+create+bucket&oq=aws+&aqs=chrome.0.69i59l3j0i20i263j69i57j69i60l3.1480j1j4&sourceid=chrome&ie=UTF-8>). Use the following access settings:
 
-![Bucket Access Settings](https://s3-us-west-2.amazonaws.com/cdn.mericobuild.com/public_access.png)
+<img src="https://s3-us-west-2.amazonaws.com/cdn.mericobuild.com/public_access.png" width="500" />
 
 2. [Create a folder](<https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html#create-folder>) called `badges` within the new bucket.
 3. Use an existing IAM user, or create a new one, and give them at least the S3 permission to `putObject` (for testing purposes you can just give them full S3 access if you like). Copy their `Access Key` and `Secret Access Key`.
@@ -257,6 +260,14 @@ Sign up with your GitHub account, authorize the app, and submit a repository for
 Note: it's best to stick with smaller repositories for now. We do limit analysis to the latest 2,500 commits, but even still, a really large repo (e.g. Django) can take up to a day to process. Try to limit your analyses to repos with under 5,000 commits.
 
 <br/>
+
+### Screenshots
+
+Project Profile             |  My Repositories
+:-------------------------:|:-------------------------:
+<img src="https://merico-build.s3-us-west-2.amazonaws.com/js-callgraph.png" /> | <img src="https://merico-build.s3-us-west-2.amazonaws.com/my_repos.png" />
+
+<br/> 
 
 ## Contributing
 
