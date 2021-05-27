@@ -137,7 +137,7 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 `build-backend` requires a good deal of configuration. Most of it is required to make it work. For this section you'll be editing `config/local.js`.
 <br/>
 
-Please note, the Analytics Engine, RabbitMQ, and Minio are all **shared resources** for our open source developers. We are working towards making the Analytics Engine open source, but in the meantime we are offering this shared service.
+Please note, the Analytics Engine, RabbitMQ, and Minio are all **shared resources** for our open source developers. As such, you may receive other contributors' RabbitMQ messages. We are working towards making the Analytics Engine open source, but in the meantime we are offering this shared service.
 
 <br/>
 
