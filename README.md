@@ -2,7 +2,8 @@
 
 ![build passing](https://badgen.net/badge/build/passing/4c1?icon=gitlab)
 ![license](https://badgen.net/github/license/merico-dev/build)
-![Discord](https://img.shields.io/discord/844603288082186240)
+[![Discord](https://img.shields.io/discord/844603288082186240.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/83rDG6ydVZ)
+
 
 [Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses static code analysis to more accurately measure the value and impact of code contributions, it then renders these metrics into practical dashboards and reports.  
 
@@ -16,6 +17,8 @@ What makes Merico Build special?
 4) Technology previously available only to [enterprise](<https://meri.co/>) is now accessible and available to all. 
 
 Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better. 
+
+[Join our Discord](<https://discord.gg/83rDG6ydVZ>)
 
 ## Summary
 
