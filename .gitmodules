@@ -1,0 +1,6 @@
+[submodule "build-backend"]
+	path = build-backend
+	url = https://github.com/merico-dev/build-backend
+[submodule "build-frontend"]
+	path = build-frontend
+	url = https://github.com/merico-dev/build-frontend
