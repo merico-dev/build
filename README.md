@@ -3,15 +3,33 @@
 
 <img src="https://merico-build.s3-us-west-2.amazonaws.com/Merico-Build-logo.svg" height="30"/>
 
-[Merico Build](<https://merico.build/>) is an application that calculates and displays developer contribution metrics. It is specifically designed to help open source maintainers look after the health of their projects.
+[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses static code analysis to more accurately measure the value and impact of code contributions, it then renders these metrics into practical dashboards and reports.  
 
-Merico Build leverages the Merico Analytics Engine that powers the [Enterprise Edition](<https://meri.co/>). Through Merico Build, open source repositories are submitted to the Analytics Engine, which generates a report that Build can parse and intelligently render for users.
+We are on a mission to improve the transparency, health, and sustainability of open source, and we invite you to join us. We built and released Merico Build because we felt there was a better way to quantify and articulate the value of developer contributions. 
+We believe that increased objectivity and insight can equip developers and projects to achieve their potential. 
+What makes Merico Build special? 
+
+1) Code contribution is analyzed leveraging the abstract synthax tree, for more precise measurements. 
+2) Signals extracted directly from the code, enabling more pure insights. 
+3) Contributions get translated into badges. Share badges and celebrate accomplishments with proof.
+4) Technology previously available only to [enterprise](<https://meri.co/>) is now accessible and available to all. 
+
+Merico began as research in UC Berkeley's computer science department and is now available to all. We are excited and honored to welcome contributors from around the world to join this mission to empower developers everywhere to build better. 
 
 ![build passing](https://badgen.net/badge/build/passing/4c1?icon=gitlab)
 ![license](https://badgen.net/github/license/merico-dev/build)
 ![Stars](https://badgen.net/github/stars/merico-dev/build)
 
 <br/>
+
+## Summary
+
+* [**Requirements**](#requirements)
+* [**Installation**](#installation)
+* [**Configuration**](#configuration)
+* [**Usage**](#usage)
+* [**Contributing**](#contributing)
+* [**License**](#license)
 
 ## Requirements
 
