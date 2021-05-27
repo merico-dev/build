@@ -159,9 +159,12 @@ Authorization callback URL | `http://localhost:1337/auth/github/callback`
 
 ### GitLab Auth
 
-<br/>
-Coming soon.
-<br/><br/>
+1. As a logged-in Gitlab user, go to Preferences > Applications.
+2. Create a new application.
+3. Name it whatever you like.
+4. Check the `read_api` and `read_user` permissions.
+5. Set the `Redirect URI` to `http://localhost:1337/auth/gitlab/callback`
+6. Save the `Application Id` and `Secret` and paste them into the `gitlabAuth` config object in `config/local.js`
 
 ### Analytics Engine
 
