@@ -26,6 +26,8 @@ Merico began as research in UC Berkeley's computer science department and is now
 
 * [**Requirements**](#requirements)
 * [**Installation**](#installation)
+    * [**Installing build-frontend**](#installing-build-frontend)
+    * [**Installing build-backend**](#installing-build-backend)
 * [**Configuration**](#configuration)
 * [**Usage**](#usage)
 * [**Contributing**](#contributing)
@@ -46,6 +48,22 @@ NodeJS 14.x
 To get the entire Merico Build application running on your computer, you'll need to clone and configure two different repositories: `build-backend` and `build-frontend`.
 
 <br/>
+
+## Installing `build-frontend`
+
+### Clone
+
+Clone the repo
+```
+git clone https://github.com/merico-dev/build-frontend.git
+```
+
+### Install dependencies
+```
+npm i
+```
+<br/>
+
 
 ## Installing `build-backend`
 
@@ -218,21 +236,6 @@ You'll need an AWS account for this. If you don't already have one, [sign up for
 
 Update the `ENCRYPTION_KEY` config value in `config/local.js` to a random string of your choosing. We use this for various encryption functions.
 <br/><br/>
-
-## Installing `build-frontend`
-
-### Clone
-
-Clone the repo
-```
-git clone https://github.com/merico-dev/build-frontend.git
-```
-
-### Install dependencies
-```
-npm i
-```
-<br/>
 
 ## Usage
 
