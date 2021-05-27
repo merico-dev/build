@@ -20,8 +20,6 @@ Merico began as research in UC Berkeley's computer science department and is now
 ![license](https://badgen.net/github/license/merico-dev/build)
 ![Stars](https://badgen.net/github/stars/merico-dev/build)
 
-<br/>
-
 ## Summary
 
 * [**Requirements**](#requirements)
@@ -32,6 +30,8 @@ Merico began as research in UC Berkeley's computer science department and is now
 * [**Usage**](#usage)
 * [**Contributing**](#contributing)
 * [**License**](#license)
+
+<br/>
 
 ## Requirements
 
@@ -49,7 +49,7 @@ To get the entire Merico Build application running on your computer, you'll need
 
 <br/>
 
-## Installing `build-frontend`
+## Installing build-frontend
 
 ### Clone
 
@@ -65,7 +65,7 @@ npm i
 <br/>
 
 
-## Installing `build-backend`
+## Installing build-backend
 
 ### Clone
 
