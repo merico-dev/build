@@ -4,24 +4,22 @@
 ![license](https://badgen.net/github/license/merico-dev/build)
 [![Discord](https://img.shields.io/discord/844603288082186240.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/83rDG6ydVZ)
 
-[中文Readme](README_zh.md)
+[Merico Build](<https://merico.build/>)是一个致力于用代码分析与数据挖掘赋能开源开发者，维护者，以及社区的web app。它使用新颖的静态分析来更准确地衡量代码贡献的价值和影响。
 
-[Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses novel static analysis to more accurately measure the value and impact of code contribution. 
+- 开源维护者可以用Merico Build的数据指标来跟踪社区的发展, 发掘更多成长中的贡献者。 
+- 开源开发者可以用Merico Build自动建立一个可分享且实时更新的开源个人主页，跟踪并展示他们的开源贡献。
 
-- For maintainers, Merico Build renders these metrics to track community growth and to identify rising star contributors. 
-- For developers, Merico Build automatically showcases your contributions in an evolving and sharable profile. 
+**为什么选择Merico Build?**
 
-**Why Merico Build?**
+1) 静态分析驱动的代码贡献分析, 提供更加智能的指标。比如衡量代码量时，我们开发了[ELOC](https://playground.merico.build/)来替换信噪比较低的代码行数(LOC)。
+2) 多维度综合考虑贡献，包含代码量，依赖关系，重复代码，测试覆盖度，文档覆盖度，以及未来更多指标。
+3) 您的开源贡献会自动转化成可以分享的徽章。
 
-1) Code contribution is analyzed with more perceptive static code analysis, including [ELOC](https://playground.merico.build/), an enhanced noise-proof metric drastically improving upon Lines of Code (LOC.) 
-2) Multidimensional signals extracted directly from the code, accounting for volume, dependencies, redundancy, test coverage, comment coverage, and more. 
-3) Contributions get translated into badges. Share badges and celebrate accomplishments with proof.
+Merico始于一个加州大学伯克利分校计算机系的[研究项目](<https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-174.pdf>)。 我们诚挚地邀请您加入我们，一起提高开源的透明度、健康度和可持续性。
 
-We invite you to join us to improve the transparency, health, and sustainability of open source. Merico began as [research](<https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-174.pdf>) in UC Berkeley's computer science department, we are excited to welcome contributors from around the world to join us in advancing this technology to empower developers everywhere to build better!
+**如果您想试用Merico Build, 请访问 https://merico.build/. 如果您想贡献代码, scroll down for instructions to set up for development.**
 
-**To use the app, go to https://merico.build/. To contribute, scroll down for instructions to set up for development.**
-
-**If you have a feature request, feel free to create an issue in this repo or join us on [Discord](<https://discord.gg/83rDG6ydVZ>)!**
+**如果您想提议新的功能或有任何建议，请创建Github Issue或者加入我们的[Discord](<https://discord.gg/83rDG6ydVZ>)!**
 
 ## Summary
 
@@ -191,12 +189,12 @@ Merico Build uses Minio to store the protobuf files created by the Analytics Eng
 Update the `minio` config object in `config/local.js` to the following:
 ```
 minio: {
-  endPoint: '52.41.108.240',
-  port: 30003,
-  useSSL: false,
-  accessKey: 'GmXnuzA3a27uO8RU',
-  secretKey: 'ahx57GhFwZhEBlNENkz0TgVn',
-  bucketAE: 'merico-analysis'
+    endPoint: '52.41.108.240',
+    port: 30003,
+    useSSL: false,
+    accessKey: 'GmXnuzA3a27uO8RU',
+    secretKey: 'ahx57GhFwZhEBlNENkz0TgVn',
+    bucketAE: 'merico-analysis'
 },
 ```
 <br/>
