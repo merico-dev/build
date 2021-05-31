@@ -4,7 +4,7 @@
 ![license](https://badgen.net/github/license/merico-dev/build)
 [![Discord](https://img.shields.io/discord/844603288082186240.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/83rDG6ydVZ)
 
-[中文Readme](README_zh.md)
+[中文README](README.zh-CN.md)
 
 [Merico Build](<https://merico.build/>) is a web app empowering open source developers, maintainers, and communities with metrics from Git, GitHub, and more. The application uses novel static analysis to more accurately measure the value and impact of code contribution. 
 
