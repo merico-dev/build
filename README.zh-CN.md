@@ -24,9 +24,9 @@ Merico始于一个加州大学伯克利分校计算机系的[研究项目](<http
 ## Summary
 
 * [**Requirements**](#requirements)
-* [**Installation**](#installation)
-    * [**Installing build-frontend**](#installing-build-frontend)
-    * [**Installing build-backend**](#installing-build-backend)
+* [**安装**](#安装)
+    * [**前端安装**](#前端安装)
+    * [**后端安装**](#后端安装)
 * [**Configuration**](#configuration)
 * [**Usage**](#usage)
 * [**Contributing**](#contributing)
@@ -44,63 +44,63 @@ NodeJS 14.x
 
 <br/>
 
-## Installation
+## 安装
 
-To get the entire Merico Build application running on your computer, you'll need to clone and configure two different repositories: `build-backend` and `build-frontend`.
+本地运行 Merico Build 需要克隆和配置两个仓库： `build-backend` 和 `build-frontend`。
 
 <br/>
 
-## Installing build-frontend
+## 前端安装
 
-### Clone
+### 克隆
 
-Clone [the repo](<https://github.com/merico-dev/build-frontend>)
+克隆[前端仓库](<https://github.com/merico-dev/build-frontend>)
 ```
 git clone https://github.com/merico-dev/build-frontend.git
 ```
 
-### Install dependencies
+### 安装依赖
 ```
 npm i
 ```
 <br/>
 
 
-## Installing build-backend
+## 后端安装
 
-### Clone
+### 克隆
 
-Clone [the repo](<https://github.com/merico-dev/build-backend>)
+克隆[后端仓库](<https://github.com/merico-dev/build-backend>)
 ```
 git clone https://github.com/merico-dev/build-backend.git
 ```
 
-### Install dependencies
+### 安装依赖
 ```
 npm i
 ```
 
-### Initialize the submodule.
+### 初始化子模块
 ```
 git submodule init
 git submodule update
 ```
 
-### Install `common-backend` dependencies.
+### 安装 `common-backend` 依赖。
 ```
 cd common-backend
 npm i
 ```
 
-### Create the config file
+### 创建配置文件
 
-Rename `config/local.example.js` to `config/local.js`
+重命名 `config/local.example.js` 为 `config/local.js`
 <br/>
-#### Set up the DB
+#### 配置数据库
 
-Requirement: Postgres 12.5
+依赖: Postgres 12.5
 
-1. Create the DB
+1. 创建数据库
 ```
 psql postgres -c "CREATE DATABASE your_db_name"
 psql postgres -c "CREATE SCHEMA your_db_name"
@@ -111,9 +111,9 @@ psql postgres -c "GRANT ALL ON ALL TABLES IN SCHEMA public to merico"
 psql postgres -c "GRANT ALL ON SCHEMA your_db_name to merico"
 ```
 
-2. Rename or copy `/config/database.example.json` to `/config/database.json`
+2. 复制或重命名 `/config/database.example.json` 为 `/config/database.json`
 
-3. Update the `development` config object in  `database.json`:
+3. 更新 `database.json` 中 `development` 对象的内容:
 ```
 {
   "development": {
@@ -128,7 +128,7 @@ psql postgres -c "GRANT ALL ON SCHEMA your_db_name to merico"
 }
 ```
 
-4. Create the tables
+4. 建表
 ```
 psql -f db/schema-only.sql -d your_db_name -U merico
 psql -f db/badge-types.sql -d your_db_name -U merico
