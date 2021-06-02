@@ -21,20 +21,20 @@ Merico始于一个加州大学伯克利分校计算机系的[研究项目](<http
 
 **如果您想提议新的功能或有任何建议，请创建Github Issue或者加入我们的[Discord](<https://discord.gg/83rDG6ydVZ>)!**
 
-## Summary
+## 摘要
 
-* [**Requirements**](#requirements)
-* [**Installation**](#installation)
-    * [**Installing build-frontend**](#installing-build-frontend)
-    * [**Installing build-backend**](#installing-build-backend)
-* [**Configuration**](#configuration)
-* [**Usage**](#usage)
-* [**Contributing**](#contributing)
+* [**依赖**](#依赖)
+* [**安装**](#安装)
+    * [**前端安装**](#前端安装)
+    * [**后端安装**](#后端安装)
+* [**配置**](#配置)
+* [**使用**](#使用)
+* [**参与贡献**](#参与贡献)
 * [**License**](#license)
 
 <br/>
 
-## Requirements
+## 依赖
 
 Postgres 12.5
 <https://www.postgresql.org/download/>
@@ -44,63 +44,63 @@ NodeJS 14.x
 
 <br/>
 
-## Installation
+## 安装
 
-To get the entire Merico Build application running on your computer, you'll need to clone and configure two different repositories: `build-backend` and `build-frontend`.
+本地运行 Merico Build 需要克隆和配置两个仓库： `build-backend` 和 `build-frontend`。
 
 <br/>
 
-## Installing build-frontend
+## 前端安装
 
-### Clone
+### 克隆
 
-Clone [the repo](<https://github.com/merico-dev/build-frontend>)
+克隆[前端仓库](<https://github.com/merico-dev/build-frontend>)
 ```
 git clone https://github.com/merico-dev/build-frontend.git
 ```
 
-### Install dependencies
+### 安装依赖
 ```
 npm i
 ```
 <br/>
 
 
-## Installing build-backend
+## 后端安装
 
-### Clone
+### 克隆
 
-Clone [the repo](<https://github.com/merico-dev/build-backend>)
+克隆[后端仓库](<https://github.com/merico-dev/build-backend>)
 ```
 git clone https://github.com/merico-dev/build-backend.git
 ```
 
-### Install dependencies
+### 安装依赖
 ```
 npm i
 ```
 
-### Initialize the submodule.
+### 初始化子模块
 ```
 git submodule init
 git submodule update
 ```
 
-### Install `common-backend` dependencies.
+### 安装 `common-backend` 依赖。
 ```
 cd common-backend
 npm i
 ```
 
-### Create the config file
+### 创建配置文件
 
-Rename `config/local.example.js` to `config/local.js`
+重命名 `config/local.example.js` 为 `config/local.js`
 <br/>
-#### Set up the DB
+#### 配置数据库
 
-Requirement: Postgres 12.5
+依赖: Postgres 12.5
 
-1. Create the DB
+1. 创建数据库
 ```
 psql postgres -c "CREATE DATABASE your_db_name"
 psql postgres -c "CREATE SCHEMA your_db_name"
@@ -111,9 +111,9 @@ psql postgres -c "GRANT ALL ON ALL TABLES IN SCHEMA public to merico"
 psql postgres -c "GRANT ALL ON SCHEMA your_db_name to merico"
 ```
 
-2. Rename or copy `/config/database.example.json` to `/config/database.json`
+2. 复制或重命名 `/config/database.example.json` 为 `/config/database.json`
 
-3. Update the `development` config object in  `database.json`:
+3. 更新 `database.json` 中 `development` 对象的内容:
 ```
 {
   "development": {
@@ -128,7 +128,7 @@ psql postgres -c "GRANT ALL ON SCHEMA your_db_name to merico"
 }
 ```
 
-4. Create the tables
+4. 建表
 ```
 psql -f db/schema-only.sql -d your_db_name -U merico
 psql -f db/badge-types.sql -d your_db_name -U merico
@@ -136,7 +136,7 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 ```
 <br/>
 
-## Configuration
+## 配置
 
 运行`build-backend`还需要不少的配置工作，其中大部分都是必须的。这一部分的配置将会修改`config/local.js`文件。
 <br />
@@ -241,7 +241,7 @@ minio: {
 将`config/local.js`配置文件中的`ENCRYPTION_KEY`修改为一个随机的密码字符串，`Merico Build`系统中的各种数据加密场景将会用到这个字符串作为密钥。
 <br/><br/>
 
-## Usage
+## 使用
 
 ### 启动后端服务 build-backend
 ```
@@ -270,7 +270,7 @@ Project Profile             |  My Repositories
 
 <br/> 
 
-## Contributing
+## 参与贡献
 
 We welcome and appreciate contributions. Feel free to find your own way and put up a pull request, or join us on [our discord](<https://discord.gg/83rDG6ydVZ>) and we can help. 
 
