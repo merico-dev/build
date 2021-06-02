@@ -148,7 +148,7 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 
 `Merico Build`需要配置GitHub的OAuth来实现用户认证，并访问用户在Github上的公开代码仓库。
 
-1. 登录Github，在Developer Settings页面，使用以下配置[创建一个GitHub OAuth应用](<https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>)：
+1. 登录Github，在[Developer Settings](https://github.com/settings/developers)页面，使用以下配置[创建一个GitHub OAuth应用](<https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>)：
 
 Property | Value
 ------------ | -------------
