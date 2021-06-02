@@ -172,9 +172,9 @@ Authorization callback URL | `http://localhost:1337/auth/github/callback`
 6. 在创建成功的应用设置页面，将`Application Id`和`Secret`复制粘贴到`config/local.js`配置文件的`gitlabAuth`配置项下面。
 <br/>
 
-### Analytics Engine 代码分析引擎
+### Analytics Engine 分析引擎
 
-`Merico Build`系统通过gRPC来调用代码分析引擎（AE）提供的代码分析服务。我们正在准备着在近期将AE服务开源，敬请关注！
+`Merico Build`系统通过gRPC来调用分析引擎（AE）提供的代码分析服务。我们正在准备着在近期将AE服务开源，敬请关注！
 
 请将`config/local.js`配置文件中的`CA_GRPC_SERVER`配置项设置为我们提供的共享AE服务地址:
 
@@ -184,7 +184,7 @@ Authorization callback URL | `http://localhost:1337/auth/github/callback`
 
 ### Minio
 
-`Merico Build`使用`Minio`来存储代码分析引擎AE生成的Protocol Buffer格式的分析结果文件，`common-backend`子模块负责读取和解析这些文件，并把数据导入Build系统的数据库，用来展示分析报告。
+`Merico Build`使用`Minio`来存储分析引擎AE生成的Protocol Buffer格式的分析结果文件，`common-backend`子模块负责读取和解析这些文件，并把数据导入Build系统的数据库，用来展示分析报告。
 
 请将`config/local.js`配置文件的`minio`配置项设置为我们提供的共享Minio服务：
 
@@ -202,7 +202,7 @@ minio: {
 
 ### RabbitMQ
 
-`Merico Build`需要通过`RabbitMQ`获取来自代码分析引擎AE的通知，包括分析进度，任务完成等。
+`Merico Build`需要通过`RabbitMQ`获取来自分析引擎AE的通知，包括分析进度，任务完成等。
 
 请将`config/local.js`配置文件的`RABBIT_MQ_URL`配置项设置为我们提供的共享RabbitMQ服务：
 
