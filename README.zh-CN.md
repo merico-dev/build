@@ -138,55 +138,56 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 
 ## 配置
 
-`build-backend` requires a good deal of configuration. Most of it is required to make it work. For this section you'll be editing `config/local.js`.
-<br/>
+运行`build-backend`还需要不少的配置工作，其中大部分都是必须的。这一部分的配置将会修改`config/local.js`文件。
+<br />
 
-Please note, the Analytics Engine, RabbitMQ, and Minio are all **shared resources** for our open source developers. As such, you may receive other contributors' RabbitMQ messages. We are working towards making the Analytics Engine open source, but in the meantime we are offering this shared service.
-
-<br/>
+请注意，这里用到的Analytics Engine, RabbitMQ, Minio是我们为开源开发者提供的**共享资源**，因此你可能会在RabbitMQ里收到其他开发者的任务消息。我们正在做一些准备工作将Analytics Engine部分开源，在此之前我们提供了这些共享资源。
+<br />
 
 ### GitHub Auth
 
-Merico Build uses GitHub for Oauth and for access to the the user's public repo data.
+`Merico Build`需要配置GitHub的OAuth来实现用户认证，并访问用户在Github上的公开代码仓库。
 
-1. [Create a GitHub OAuth app](<https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>) with the following settings:
+1. 登录Github，在[Developer Settings](https://github.com/settings/developers)页面，使用以下配置[创建一个GitHub OAuth应用](<https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app>)：
 
 Property | Value
 ------------ | -------------
-Application name | `your-github-username-merico`
+Application name | `你的github用户名-merico`
 Homepage URL | `http://localhost:1337/`
 Authorization callback URL | `http://localhost:1337/auth/github/callback`
+<br />
 
-2. Once your app is created, on the Settings page for your GitHub app, `Generate a new client secret`.
+2. 应用创建成功之后，在你的Github OAuth应用的设置页面，点击`Generate a new client secret`。
 
-3. Copy and paste your GitHub OAuth App `Client ID` and `Client Secret` to the `githubAuth` config object in `config/local.js`.
+3. 将你的GitHub OAuth应用的`Client ID`和`Client Secret`复制粘贴到`config/local.js`配置文件里的`githubAuth`配置项下面。
 <br/>
 
 ### GitLab Auth
 
-1. As a logged-in Gitlab user, go to Preferences > Applications.
-2. Create a new application.
-3. Name it whatever you like.
-4. Check the `read_api` and `read_user` permissions.
-5. Set the `Redirect URI` to `http://localhost:1337/auth/gitlab/callback`
-6. Save the `Application Id` and `Secret` and paste them into the `gitlabAuth` config object in `config/local.js`
-
+1. 登录Gitlab，从右上角的用户头像菜单里进入：Preferences > Applications。
+2. 创建一个新的应用。
+3. 给你的应用起一个喜欢的名字。
+4. 将`Redirect URI`设置为`http://localhost:1337/auth/gitlab/callback`。
+5. 勾选`read_api`和`read_user`权限，点击`Save application`创建应用。
+6. 在创建成功的应用设置页面，将`Application Id`和`Secret`复制粘贴到`config/local.js`配置文件的`gitlabAuth`配置项下面。
 <br/>
 
-### Analytics Engine
+### Analytics Engine 分析引擎
 
-Merico Build uses GRPC to execute functions on the Analytics Engine (AE). Merico will soon be making AE open source. Keep your eye out for it!
+`Merico Build`系统通过gRPC来调用分析引擎（AE）提供的代码分析服务。我们正在准备着在近期将AE服务开源，敬请关注！
 
-Update `CA_GRPC_SERVER` config value in `config/local.js` to the following:
+请将`config/local.js`配置文件中的`CA_GRPC_SERVER`配置项设置为我们提供的共享AE服务地址:
 
 `'52.41.108.240:30006'`
 
 <br/>
 
 ### Minio
-Merico Build uses Minio to store the protobuf files created by the Analytics Engine. The `common-backend` submodule reads these protobuf files and enters the data in the Build DB.
 
-Update the `minio` config object in `config/local.js` to the following:
+`Merico Build`使用`Minio`来存储分析引擎AE生成的Protocol Buffer格式的分析结果文件，`common-backend`子模块负责读取和解析这些文件，并把数据导入Build系统的数据库，用来展示分析报告。
+
+请将`config/local.js`配置文件的`minio`配置项设置为我们提供的共享Minio服务：
+
 ```
 minio: {
     endPoint: '52.41.108.240',
@@ -201,9 +202,9 @@ minio: {
 
 ### RabbitMQ
 
-Build uses RabbitMQ to receive messages from the Analytics Engine about report progress and completion.
+`Merico Build`需要通过`RabbitMQ`获取来自分析引擎AE的通知，包括分析进度，任务完成等。
 
-Update the `RABBIT_MQ_URL` config value in `config/local.js` to the following:
+请将`config/local.js`配置文件的`RABBIT_MQ_URL`配置项设置为我们提供的共享RabbitMQ服务：
 
 `'amqp://rabbitmq:9UvTFggbQsGhNx4hrRdA24tx@52.41.108.240:30001/rabbitmq'`
 
@@ -211,53 +212,53 @@ Update the `RABBIT_MQ_URL` config value in `config/local.js` to the following:
 
 ### AWS S3
 
-You'll need an AWS account for this. If you don't already have one, [sign up for a free AWS account](<https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start>).
+下面的设置需要用到你的AWS账号，如果还没有的话可以到这里[注册一个免费AWS账号](https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start)。
 
-1. [Create a bucket](<https://www.google.com/search?q=aws+s3+create+bucket&oq=aws+&aqs=chrome.0.69i59l3j0i20i263j69i57j69i60l3.1480j1j4&sourceid=chrome&ie=UTF-8>). Use the following access settings:
+1. 使用下图中的访问限制设置[创建一个Bucket](https://www.google.com/search?q=aws+s3+create+bucket&oq=aws+&aqs=chrome.0.69i59l3j0i20i263j69i57j69i60l3.1480j1j4&sourceid=chrome&ie=UTF-8)：
 
 <img src="https://s3-us-west-2.amazonaws.com/cdn.mericobuild.com/public_access.png" width="500" />
 
-2. [Create a folder](<https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html#create-folder>) called `badges` within the new bucket.
-3. Use an existing IAM user, or create a new one, and give them at least the S3 permission to `putObject` (for testing purposes you can just give them full S3 access if you like). Copy their `Access Key` and `Secret Access Key`.
-4. Update the `AWS_S3` settings in `config/local.js` with the newly created `bucket name`, `Access Key`, `Secret Access Key`, and `Region`.
-<br/>
+2. 在新创建的Bucket中[创建一个文件夹](<https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html#create-folder>)，名为`badges` 。
+3. 创建一个IAM用户，或选择一个已有的IAM用户，给这个用户添加`putObject`权限 (如果只是用来测试，也可以简单粗暴的全选S3权限)。复制IAM用户的`Access Key`个`Secret Access Key`。
+4. 将`config/local.js`配置文件中的`AWS_S3`配置项的设置，更新为前面几步中的`bucket name`, `Access Key`, `Secret Access Key`, `Region`。
 
 ### AWS SES
 
-*Merico Build can function without SES. It will fail to send emails, but the app can handle these errors. If you do want to get email sending functionality working, follow these steps:
+* 这个配置不是必须的，不配置AWS SES的情况下`Merico Build`无法发送邮件，但并不会导致出错。如果你需要发送邮件的功能，请继续下面的步骤：
 
-You'll need an AWS account for this. If you don't already have one, [sign up for a free AWS account](<https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start>).
+下面的设置需要用到你的AWS账号，如果还没有的话可以到这里[注册一个免费AWS账号](https://portal.aws.amazon.com/billing/signup?refid=em_127222&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start)。
 
-1. Go to the AWS Simple Email Service console.
-2. Verify your email domain.
-3. Once your domain is verified, click on `SMTP Settings`.
-4. Click on `Create my SMTP Credentials`
-5. Copy the `Access Key` and `Secret Access Key`
-6. Paste them in the SES section of `config/local.js`
+1. 打开AWS Simple Email Service的控制台。
+2. 验证你的Email域名。
+3. 域名验证通过后，点击`SMTP Settings`。
+4. 点击`Create my SMTP Credentials`。
+5. 复制`Access Key`和`Secret Access Key`。
+6. 将上一步复制的密钥对填写到`config/local.js`配置文件的`SES`配置项中。
 <br/>
 
 ### Encryption Key
 
-Update the `ENCRYPTION_KEY` config value in `config/local.js` to a random string of your choosing. We use this for various encryption functions.
+将`config/local.js`配置文件中的`ENCRYPTION_KEY`修改为一个随机的密码字符串，`Merico Build`系统中的各种数据加密场景将会用到这个字符串作为密钥。
 <br/><br/>
 
 ## 使用
 
-### build-backend
+### 启动后端服务 build-backend
 ```
 npm run dev
 ```
 
-### build-frontend
+### 启动前端服务 build-frontend
+
 ```
 npm run dev
 ```
 
-After you've started the frontend app and the code has compiled, you should be able to visit http://localhost:3000/ and see the Merico Build homepage.
+等待前端和后端服务启动完成，你就应该可以在`http://localhost:3000/`看到`Merico Build`系统的首页啦.
 
-Sign up with your GitHub account, authorize the app, and submit a repository for analysis.
+接下来，你就可以用你的GitHub账号登录`Merico Build`，授权应用访问你的GitHub，然后就可以提交一个代码仓库开始分析啦。
 
-Note: it's best to stick with smaller repositories for now. We do limit analysis to the latest 2,500 commits, but even still, a really large repo (e.g. Django) can take up to a day to process. Try to limit your analyses to repos with under 5,000 commits.
+Note: 由于共享的分析资源有限，建议目前先用来分析一些较小规模的代码库。我们已经限制了每个仓库只分析最后的2500个commits，但对于一些比较大的项目（例如Django），分析任务运行时间还是会接近一天。所以尽量选择要分析的代码库规模在5000个commits以内。
 
 <br/>
 
