@@ -21,20 +21,20 @@ Merico始于一个加州大学伯克利分校计算机系的[研究项目](<http
 
 **如果您想提议新的功能或有任何建议，请创建Github Issue或者加入我们的[Discord](<https://discord.gg/83rDG6ydVZ>)!**
 
-## Summary
+## 摘要
 
-* [**Requirements**](#requirements)
+* [**依赖**](#依赖)
 * [**安装**](#安装)
     * [**前端安装**](#前端安装)
     * [**后端安装**](#后端安装)
-* [**Configuration**](#configuration)
-* [**Usage**](#usage)
-* [**Contributing**](#contributing)
+* [**配置**](#配置)
+* [**使用**](#使用)
+* [**参与贡献**](#参与贡献)
 * [**License**](#license)
 
 <br/>
 
-## Requirements
+## 依赖
 
 Postgres 12.5
 <https://www.postgresql.org/download/>
@@ -136,7 +136,7 @@ psql -f db/refresh-views.sql -d your_db_name -U merico
 ```
 <br/>
 
-## Configuration
+## 配置
 
 `build-backend` requires a good deal of configuration. Most of it is required to make it work. For this section you'll be editing `config/local.js`.
 <br/>
@@ -241,7 +241,7 @@ You'll need an AWS account for this. If you don't already have one, [sign up for
 Update the `ENCRYPTION_KEY` config value in `config/local.js` to a random string of your choosing. We use this for various encryption functions.
 <br/><br/>
 
-## Usage
+## 使用
 
 ### build-backend
 ```
@@ -269,7 +269,7 @@ Project Profile             |  My Repositories
 
 <br/> 
 
-## Contributing
+## 参与贡献
 
 We welcome and appreciate contributions. Feel free to find your own way and put up a pull request, or join us on [our discord](<https://discord.gg/83rDG6ydVZ>) and we can help. 
 
