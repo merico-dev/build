@@ -262,7 +262,7 @@ Note: 由于共享的分析资源有限，建议目前先用来分析一些较�
 
 <br/>
 
-### Screenshots
+### 截图
 
 Project Profile             |  My Repositories
 :-------------------------:|:-------------------------:
@@ -272,10 +272,10 @@ Project Profile             |  My Repositories
 
 ## 参与贡献
 
-We welcome and appreciate contributions. Feel free to find your own way and put up a pull request, or join us on [our discord](<https://discord.gg/83rDG6ydVZ>) and we can help. 
+我们欢迎并感谢大家的贡献。你可以用你自己的方式来提一个 Pull Request，或者加入我们的 [discord](<https://discord.gg/83rDG6ydVZ>) 社群来获得帮助。
 
 <br/>
 
-## License
+## 许可证
 
-Build is [Apache 2.0 licensed](<https://github.com/merico-dev/build/blob/master/LICENSE>)
+Build 遵循 [Apache 2.0 开源协议](<https://github.com/merico-dev/build/blob/master/LICENSE>)
