@@ -1,8 +1,8 @@
 # How to contribute
 
-I'm really glad you're reading this, because we need volunteer developers to help this project come to fruition.
+1. Be your awesome self
+2. Come find us in [Discord](https://discord.com/invite/uCKTg3fTQ6). We want to support you.
 
-If you haven't already, come find us in [Discord](https://discord.com/invite/uCKTg3fTQ6). We want to support you.
+Thanks,
 
-Thanks, 
 Lucas Gonze
